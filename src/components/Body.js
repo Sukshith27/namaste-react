@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RestaurantCard } from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -18,10 +19,8 @@ const Body = () => {
     fetchData();
   }, []);
 
-  console.log(resList);
-
   if (resList.length === 0) {
-    return <h2>Loading...</h2>;
+    return <Shimmer />;
   }
 
   return (
