@@ -25,7 +25,7 @@ const Body = () => {
     fetchData();
   }, []);
 
-  return resList.length === 0 ? (
+  return resList?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
