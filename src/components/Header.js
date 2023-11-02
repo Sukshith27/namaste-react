@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
-  console.log("onlineStatus", onlineStatus);
+  const userName = useContext(UserContext);
+  console.log("userName", userName);
 
   return (
     <div className="header">
@@ -28,6 +30,7 @@ const Header = () => {
           <li>
             <Link to="/cart">Cart</Link>
           </li>
+          <li>{userName.loggedInUser}</li>
         </ul>
       </div>
     </div>
